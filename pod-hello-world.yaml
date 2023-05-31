@@ -8,3 +8,8 @@ spec:
     image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
     ports:
     - containerPort: 80
+    env:
+      - name: PORT
+        value: "80"
+ #     - name: HTTP_PORT
+ #       value: "8080"
