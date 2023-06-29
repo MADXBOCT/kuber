@@ -22,4 +22,5 @@ spec:
       - name: multitool
         image: wbitt/network-multitool
         ports:
-        - containerPort: 80,443
+        - containerPort: 80
+        - containerPort: 443
