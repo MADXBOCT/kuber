@@ -70,8 +70,8 @@ spec:
         name: multitool-sep-8080
       - containerPort: 8443
         name: multitool-sep-8443
-      env:
-        - name: HTTP_PORT
-          value: "8080"
-        - name: HTTPS_PORT
-          value: "8443"
+#      env:
+#        - name: HTTP_PORT
+#          value: "8080"
+#        - name: HTTPS_PORT
+#          value: "8443"
