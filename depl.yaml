@@ -44,15 +44,15 @@ spec:
   - name: http-nginx-port
     protocol: TCP
     port: 2080
-    targetPort: 80
+    targetPort: http-web-svc
   selector:
     app.kubernetes.io/name: multitool
   ports:
     - name: http-multitool-port
       protocol: TCP
       port: 1080
-      targetPort: 8080
+      targetPort: multitool-8080
     - name: https-multitool-port
       protocol: TCP
       port: 1443
-      targetPort: 8443
+      targetPort: multitool-8443
