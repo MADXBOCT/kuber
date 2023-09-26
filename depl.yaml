@@ -65,7 +65,7 @@ spec:
   containers:
   - name: multitool-separate
     image: wbitt/network-multitool
-      ports:
+    ports:
       - containerPort: 8080
         name: multitool-8080
       - containerPort: 8443
@@ -74,4 +74,4 @@ spec:
         - name: HTTP_PORT
           value: "8080"
         - name: HTTPS_PORT
-          value: "8443"c
+          value: "8443"
