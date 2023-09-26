@@ -45,14 +45,13 @@ spec:
       protocol: TCP
       port: 2080
       targetPort: http-web-svc
-
-#    app.kubernetes.io/name: multitool
-#    ports:
-#    - name: http-multitool-port
-#      protocol: TCP
-#      port: 1080
-#      targetPort: multitool-8080
-#    - name: https-multitool-port
-#      protocol: TCP
-#      port: 1443
-#      targetPort: multitool-8443
+    app.kubernetes.io/name: multitool
+  ports:
+    - name: http-multitool-port
+      protocol: TCP
+      port: 1080
+      targetPort: multitool-8080
+    - name: https-multitool-port
+      protocol: TCP
+      port: 1443
+      targetPort: multitool-8443
