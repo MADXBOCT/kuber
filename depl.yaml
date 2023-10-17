@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-multitool
+        app: nginx
     spec:
       containers:
       - name: nginx
@@ -39,7 +39,7 @@ metadata:
   name: nginx-multitool-service
 spec:
   selector:
-    name: nginx-multitool
+    name: nginx
   ports:
     - name: http-nginx-port
       protocol: TCP
