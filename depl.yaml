@@ -39,7 +39,7 @@ metadata:
   name: nginx-multitool-service
 spec:
   selector:
-    name: nginx-multitool
+    app: nginx-multitool
   ports:
     - name: http-nginx-port
       protocol: TCP
