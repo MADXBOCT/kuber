@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-deployment
   labels:
-    app.kubernetes.io/name: nginx-multitool
+    name: nginx-multitool
 spec:
   replicas: 1
   selector:
@@ -39,7 +39,7 @@ metadata:
   name: nginx-multitool-service
 spec:
   selector:
-    app.kubernetes.io/name: nginx-multitool
+    name: nginx-multitool
   ports:
     - name: http-nginx-port
       protocol: TCP
