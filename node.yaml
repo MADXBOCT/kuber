@@ -9,9 +9,9 @@ spec:
   ports:
     - name: node-tcp-nginx
       port: 9001
-      targetPort: 9001
+      targetPort: http-web-svc
       nodePort: 30007
     - name: node-tcp-mt
       port: 9002
-      targetPort: 9002
+      targetPort: multitool-8080
       nodePort: 30008
