@@ -13,13 +13,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-multitool
+            name: nginx-multitool-service
             port:
               number: 9001
       - path: /api
         pathType: Prefix
         backend:
           service:
-            name: nginx-multitool
+            name: nginx-multitool-service
             port:
               number: 9002
