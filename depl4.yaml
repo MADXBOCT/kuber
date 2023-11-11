@@ -17,7 +17,7 @@ spec:
       containers:
       - name: multitool
         image: wbitt/network-multitool
-        command: ['sh', '-c', 'while true; do cat /out/file.txt']
+        command: ['sh', '-c', 'while true; do cat /out/file.txt; done']
         volumeMounts:
         - name: shvol1
           mountPath: /out
