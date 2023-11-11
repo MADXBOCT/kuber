@@ -29,5 +29,6 @@ spec:
           mountPath: /in
       volumes:
         - name: shvol1
-      hostPath:
-      path: /tmp/sharedvol
+          emptyDir: {}
+#          hostPath:
+#            path: /tmp/sharedvol
