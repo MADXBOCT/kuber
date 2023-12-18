@@ -1,7 +1,6 @@
-git pull
-kubectl delete deployments my-deployment
-kubectl delete pods multitool-separate
-kubectl delete service nginx-multitool-service
-kubectl apply -f ./depl.yaml
-kubectl scale deployment my-deployment --replicas=2
-kubectl apply -f ./mtsep.yaml
+#git pull
+kubectl delete deployments.apps mt-bb
+kubectl delete pvc my-pvc-vol
+kubectl delete pv my-pv-1
+kubectl get po,deployments.apps,pv,pvc
+#kubectl apply -f ./depl-pv-pvc.yaml

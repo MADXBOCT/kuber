@@ -9,19 +9,22 @@ spec:
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
+  hostPath:
+    path: /tmp/qqq
+    type: Directory
 #  persistentVolumeReclaimPolicy: Delete
 #  storageClassName: my-local
-  storageClassName: microk8s-hostpath2
-  local:
-    path: /tmp/qqq
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - microk8s-vm
+#  storageClassName: microk8s-hostpath2
+#  local:
+#    path: /tmp/qqq
+#  nodeAffinity:
+#    required:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: kubernetes.io/hostname
+#          operator: In
+#          values:
+#          - microk8s-vm
 
 ---
 apiVersion: v1
@@ -31,7 +34,7 @@ metadata:
 #  namespace: default
 spec:
 #  storageClassName: my-local
-  storageClassName: microk8s-hostpath2
+#  storageClassName: microk8s-hostpath2
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
