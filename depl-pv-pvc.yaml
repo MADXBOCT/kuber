@@ -1,7 +1,48 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv-1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+#  persistentVolumeReclaimPolicy: Delete
+#  storageClassName: my-local
+  local:
+    path: /tmp/qqq
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - microk8s-vm
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc-vol
+#  namespace: default
+spec:
+#  storageClassName: my-local
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mt-bb
+#  namespace: default
   labels:
     app.kubernetes.io/name: mt-bb
 spec:
@@ -17,6 +58,17 @@ spec:
       containers:
       - name: multitool
         image: wbitt/network-multitool
+        volumeMounts:
+        - name: shvol1
+          mountPath: /out
       - name: busybox
         image: busybox
         command: ['sh', '-c', 'while true; do echo "it-s working" >> /in/file.txt; sleep 5; done']
+        volumeMounts:
+        - name: shvol1
+          mountPath: /in
+      volumes:
+        - name: shvol1
+#          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: my-pvc-vol
