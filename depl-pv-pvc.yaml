@@ -14,14 +14,14 @@ spec:
 #  storageClassName: microk8s-hostpath2
   local:
     path: /tmp/qqq
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - "<hostname>"
+#  nodeAffinity:
+#    required:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: kubernetes.io/hostname
+#          operator: In
+#          values:
+#          - "<hostname>"
 
 ---
 apiVersion: v1
