@@ -16,15 +16,12 @@ spec:
     path: /tmp/qqq
   nodeAffinity:
     required:
-      nodeSelector:
-        kubernetes.io/hostname: "<hostname>"
-
-#      nodeSelectorTerms:
-#      - matchExpressions:
-#        - key: kubernetes.io/hostname
-#          operator: In
-#          values:
-#          - "<hostname>"
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - "<hostname>"
 
 ---
 apiVersion: v1
