@@ -11,7 +11,7 @@ spec:
   - ReadWriteOnce
 #  persistentVolumeReclaimPolicy: Delete
 #  storageClassName: my-local
-  storageClassName: microk8s-hostpath2
+#  storageClassName: microk8s-hostpath2
   local:
     path: /tmp/qqq
   nodeAffinity:
@@ -31,7 +31,7 @@ metadata:
 #  namespace: default
 spec:
 #  storageClassName: my-local
-  storageClassName: microk8s-hostpath2
+#  storageClassName: microk8s-hostpath2
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
