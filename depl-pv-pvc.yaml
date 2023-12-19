@@ -16,12 +16,15 @@ spec:
     path: /tmp/qqq
   nodeAffinity:
     required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - microk8s-vm
+      nodeSelector:
+        kubernetes.io/hostname: "<hostname>"
+
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: kubernetes.io/hostname
+#          operator: In
+#          values:
+#          - "<hostname>"
 
 ---
 apiVersion: v1
