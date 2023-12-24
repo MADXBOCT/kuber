@@ -41,6 +41,10 @@ spec:
         ports:
         - containerPort: 80
           name: http-web-svc
+      volumes:
+      - name: cfgm-vol
+        configMap:
+          name:
 
 ---
 apiVersion: v1
