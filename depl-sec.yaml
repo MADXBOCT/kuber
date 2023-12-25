@@ -41,13 +41,13 @@ spec:
         ports:
         - containerPort: 80
           name: http-web-svc
-        volumeMounts:
-        - name: cfgm-vol
-          mountPath: /usr/share/nginx/html/index.html
-      volumes:
-      - name: cfgm-vol
-        configMap:
-          name: cfgmap-site
+#        volumeMounts:
+#        - name: cfgm-vol
+#          mountPath: /usr/share/nginx/html/index.html
+#      volumes:
+#      - name: cfgm-vol
+#        configMap:
+#          name: cfgmap-site
 
 ---
 apiVersion: v1
