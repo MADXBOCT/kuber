@@ -39,23 +39,6 @@ spec:
               configMapKeyRef:
                 name: cfgmap
                 key: mtport
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-multitool-service
-spec:
-  selector:
-    app.kubernetes.io/name: nginx-multitool
-  ports:
-    - name: http-nginx-port
-      protocol: TCP
-      port: 9001
-      targetPort: http-web-svc
-    - name: http-multitool-port
-      protocol: TCP
-      port: 9002
-      targetPort: multitool-8080
 
 ---
 apiVersion: v1
