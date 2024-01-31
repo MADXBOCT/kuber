@@ -134,14 +134,13 @@ spec:
       port: 9003
       targetPort: multitool-8083
 
-#---
-#apiVersion: networking.k8s.io/v1
-#kind: NetworkPolicy
-#metadata:
-#  name: untitled-policy
-#  namespace: app
-#spec:
-#  podSelector: {}
-#  policyTypes:
-#    - Ingress
-#  ingress: []
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+  namespace: app
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
