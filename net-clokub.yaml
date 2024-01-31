@@ -150,7 +150,7 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-              app: frontend
+              app: multitool-frontend
       ports:
         - port: 9002
 
@@ -170,7 +170,7 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-              app: backend
+              app: multitool-backend
       ports:
         - port: 9003
 
