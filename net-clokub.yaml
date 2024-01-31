@@ -143,14 +143,14 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: backend
+      app.kubernetes.io/name: backend
   policyTypes:
     - Ingress
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: frontend
+              app.kubernetes.io/name: frontend
       ports:
         - port: 9002
 
@@ -163,14 +163,14 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: cache
+      app.kubernetes.io/name: cache
   policyTypes:
     - Ingress
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: backend
+              app.kubernetes.io/name: backend
       ports:
         - port: 9003
 
