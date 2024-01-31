@@ -154,13 +154,13 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: multitool-cache
+      app.kubernetes.io/name: multitool-cache
   policyTypes:
     - Ingress
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: multitool-backend
+              app.kubernetes.io/name: multitool-backend
       ports:
         - port: 9003
