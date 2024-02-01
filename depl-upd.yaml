@@ -7,6 +7,10 @@ metadata:
     app.kubernetes.io/name: nginx-multitool
 spec:
   replicas: 5
+  strategy:
+    type: RollingUpdate
+      maxSurge: 100%
+      maxUnavailable: 80%
   selector:
     matchLabels:
       app.kubernetes.io/name: nginx-multitool
